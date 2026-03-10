@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIVApedia Docs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              encoraNavy: "#151E2E",
+              encoraCream: "#F2F0EB",
+              encoraLime: "#DDF82A",
+              encoraCoral: "#FFA9A0",
+              encoraPeriwinkle: "#B3C0E4",
+              encoraBlueText: "#2E5198",
+              encoraGrayText: "#4A5568",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "4xl": "2rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/docs.css" />
+  </head>
+  <body class="font-sans antialiased bg-encoraCream text-encoraNavy pb-20">
+    <div id="top-navbar"></div>
+
+    <!-- Docs Hero -->
+    <section
+      class="bg-encoraNavy text-white pt-40 pb-36 px-6 sm:px-12 lg:px-24"
+    >
+      <div class="m-auto max-w-5xl">
+        <p
+          class="text-sm font-semibold text-encoraLime uppercase tracking-[0.18em] mb-5"
+        >
+          Agent Documentation
+        </p>
+        <h1
+          class="text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-encora mb-8 leading-[1.05]"
+        >
+          Browse every AIVA <br class="hidden md:block" />
+          specialized agent
+        </h1>
+        <p
+          class="text-lg md:text-xl font-medium max-w-[48rem] leading-relaxed text-white"
+        >
+          Explore inputs, outputs, usage patterns, best practices, examples, and
+          implementation notes for each agent in the AIVApedia workflow.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Docs Layout -->
+    <section
+      class="max-w-[1800px] mx-auto px-6 sm:px-12 lg:px-24 -mt-20 relative z-10"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)_500px] gap-6 items-start"
+      >
+        <!-- Sidebar Left -->
+        <aside
+          class="bg-white rounded-[1.5rem] p-6 floating-nav-shadow lg:sticky lg:top-8"
+        >
+          <div class="mb-6">
+            <h2 class="text-2xl font-extrabold tracking-encora text-encoraNavy">
+              Agents Directory
+            </h2>
+            <p class="text-sm text-encoraGrayText mt-2">
+              Select an agent to view its full documentation.
+            </p>
+          </div>
+
+          <nav id="docs-sidebar" class="space-y-2"></nav>
+        </aside>
+
+        <!-- Content Center -->
+        <div id="current-doc-header" class="space-y-6 min-w-0">
+          <div class="bg-encoraLime rounded-[1.5rem] p-8 md:p-10">
+            <p
+              class="text-sm font-bold uppercase tracking-[0.18em] text-encoraNavy/70 mb-3"
+            >
+              Current Document
+            </p>
+            <h2
+              id="page-title"
+              class="text-4xl md:text-5xl font-extrabold tracking-encora text-encoraNavy leading-tight"
+            >
+              Loading...
+            </h2>
+          </div>
+
+          <article
+            id="docs-content"
+            class="bg-white rounded-[1.5rem] p-8 md:p-10 floating-nav-shadow docs-prose"
+          >
+            Loading documentation...
+          </article>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a
+              id="prev-doc-link"
+              href="#"
+              class="bg-encoraPeriwinkle rounded-[1.5rem] p-6 text-encoraNavy hover:scale-[1.01] transition-transform"
+            >
+              <p
+                class="text-sm font-bold uppercase tracking-[0.18em] text-encoraNavy/70 mb-3"
+              >
+                Previous
+              </p>
+              <p id="prev-doc-title" class="text-xl font-bold tracking-encora">
+                —
+              </p>
+            </a>
+
+            <a
+              id="next-doc-link"
+              href="#"
+              class="bg-encoraCoral rounded-[1.5rem] p-6 text-encoraNavy hover:scale-[1.01] transition-transform"
+            >
+              <p
+                class="text-sm font-bold uppercase tracking-[0.18em] text-encoraNavy/70 mb-3"
+              >
+                Next
+              </p>
+              <p id="next-doc-title" class="text-xl font-bold tracking-encora">
+                —
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right rail -->
+        <aside class="hidden lg:block lg:sticky lg:top-8 h-fit">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-[1.5rem] p-6 floating-nav-shadow">
+              <h3 class="text-lg font-bold mb-4 text-encoraNavy">
+                On this page
+              </h3>
+              <nav id="toc" class="space-y-2 text-sm"></nav>
+            </div>
+
+            <div class="bg-white rounded-[1.5rem] p-6 floating-nav-shadow">
+              <h3 class="text-lg font-bold mb-4 text-encoraNavy">
+                Prompt Library
+              </h3>
+              <nav id="prompt-toc" class="space-y-2 text-sm"></nav>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <script src="js/shared.js"></script>
+    <script src="js/docs-data.js"></script>
+    <script src="js/docs.js"></script>
+  </body>
+</html>

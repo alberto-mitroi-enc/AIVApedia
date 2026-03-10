@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIVApedia | The AI Composability Engine Hub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              encoraNavy: "#151E2E",
+              encoraCream: "#F2F0EB",
+              encoraLime: "#DDF82A",
+              encoraCoral: "#FFA9A0",
+              encoraPeriwinkle: "#B3C0E4",
+              encoraBlueText: "#2E5198",
+              encoraGrayText: "#4A5568",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "4xl": "2rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body
+    class="font-sans antialiased relative selection:bg-encoraLime selection:text-encoraNavy pb-32"
+  >
+    <div id="top-navbar"></div>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-encoraNavy text-white pt-40 pb-56 px-6 sm:px-12 lg:px-24"
+    >
+      <div class="m-auto max-w-4xl">
+        <h1
+          class="text-5xl md:text-6xl lg:text-[5.5rem] font-bold tracking-encora mb-8 leading-[1.05]"
+        >
+          AIVApedia – The <br class="hidden md:block" />
+          Composable AI Hub
+        </h1>
+
+        <p
+          class="text-lg md:text-xl font-medium max-w-[42rem] mb-12 leading-relaxed text-white"
+        >
+          While Encora AIVA is an enterprise-grade agentic platform, AIVApedia
+          is your dedicated documentation hub specifically designed to make it
+          easier to test and explore the AIVA extension.
+        </p>
+
+        <a
+          href="docs.html"
+          class="inline-block bg-[#F2F0EB] text-encoraNavy hover:bg-white transition-colors px-6 py-2.5 rounded font-semibold text-sm"
+        >
+          Explore Documentation
+        </a>
+      </div>
+    </section>
+
+    <!-- How AIVApedia Helps You -->
+    <section class="max-w-6xl mx-auto px-6 sm:px-12 -mt-24 relative z-10 mb-32">
+      <div
+        class="bg-encoraLime rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row gap-8 md:gap-16"
+      >
+        <div class="md:w-1/2">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-encoraNavy tracking-encora leading-tight"
+          >
+            How AIVApedia<br />Helps You
+          </h2>
+        </div>
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <p class="text-encoraNavy font-semibold mb-4">
+            Here's what you can achieve:
+          </p>
+          <ul class="space-y-4 text-encoraNavy">
+            <li class="flex items-start">
+              <span
+                class="mr-3 mt-2 w-1.5 h-1.5 bg-encoraNavy rounded-full shrink-0"
+              ></span>
+              <span class="leading-relaxed"
+                >Quickly understand the capabilities of each specialized
+                agent.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="mr-3 mt-2 w-1.5 h-1.5 bg-encoraNavy rounded-full shrink-0"
+              ></span>
+              <span class="leading-relaxed"
+                >Easily setup and test agentic workflows directly in your local
+                environment or IDE.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="mr-3 mt-2 w-1.5 h-1.5 bg-encoraNavy rounded-full shrink-0"
+              ></span>
+              <span class="leading-relaxed"
+                >Accelerate internal SDLC processes from requirement gathering
+                to deployment.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agent Workflow -->
+    <section class="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24 py-12 mb-20">
+      <div class="flex items-end justify-between gap-6 mb-12 flex-wrap">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-encoraNavy tracking-encora"
+        >
+          The Agent Workflow
+        </h2>
+        <a
+          href="docs.html"
+          class="text-sm font-bold text-encoraBlueText hover:text-encoraNavy transition-colors"
+        >
+          Browse all agent docs →
+        </a>
+      </div>
+
+      <div id="agents-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24 py-16 mb-32">
+      <h2
+        class="text-4xl md:text-5xl font-extrabold text-encoraNavy tracking-encora mb-16"
+      >
+        Frequently Asked Questions
+      </h2>
+
+      <div id="faq-container" class="border-t border-[#D1D1D1]"></div>
+    </section>
+
+    <script src="js/shared.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

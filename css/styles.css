@@ -1,0 +1,29 @@
+body {
+  background-color: #f2f0eb;
+  color: #151e2e;
+}
+
+/* Floating Nav Shadow */
+.floating-nav-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Accordion Animations & Layout */
+.accordion-content {
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.accordion-content.expanded {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* Custom tracking for headers */
+.tracking-encora {
+  letter-spacing: -0.04em;
+}
