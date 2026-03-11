@@ -17,10 +17,28 @@ function renderSidebar(activeDocId) {
 
   const sortedDocs = getSortedDocs();
 
-  sidebar.innerHTML = sortedDocs
-    .map((doc) => {
-      const isActive = doc.id === activeDocId;
-      return `
+  let html = "";
+  let separatorAdded = false;
+
+  sortedDocs.forEach((doc) => {
+    const isActive = doc.id === activeDocId;
+
+    if (doc.order === 0) {
+      html += `
+        <a
+          href="docs.html?doc=${doc.id}"
+          class="sidebar-link ${isActive ? "active" : ""}"
+        >
+          ${doc.title}
+        </a>
+      `;
+    } else {
+      if (!separatorAdded) {
+        html += `<div class="sidebar-separator"></div>`;
+        separatorAdded = true;
+      }
+
+      html += `
         <a
           href="docs.html?doc=${doc.id}"
           class="sidebar-link ${isActive ? "active" : ""}"
@@ -28,8 +46,10 @@ function renderSidebar(activeDocId) {
           ${doc.order.toString().padStart(2, "0")}. ${doc.title}
         </a>
       `;
-    })
-    .join("");
+    }
+  });
+
+  sidebar.innerHTML = html;
 }
 
 function renderPrevNextLinks(currentDocId) {

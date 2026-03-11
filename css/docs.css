@@ -148,7 +148,7 @@ body {
 
 .sidebar-link {
   display: block;
-  padding: 0.85rem 1rem;
+  padding: 0.45rem 1rem;
   border-radius: 1rem;
   color: #151e2e;
   font-weight: 700;
@@ -184,4 +184,10 @@ body {
 .toc-h3 {
   padding-left: 1rem;
   font-size: 0.85rem;
+}
+.sidebar-separator {
+  height: 1px;
+  background: rgba(21, 30, 46, 0.12);
+  margin: 10px 0 12px 0;
+  border-radius: 999px;
 }

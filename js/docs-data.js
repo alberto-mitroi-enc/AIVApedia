@@ -65,4 +65,16 @@ const agentDocs = [
     file: "docs/project-status-reporter.md",
     order: 11,
   },
+  {
+    id: "agent-workflow-overview.md",
+    title: "Agent Workflow Overview",
+    file: "docs/agent-workflow-overview.md",
+    order: 0,
+  },
+  {
+    id: "prompt-engineering-playbook.md",
+    title: "Prompt Engineering Playbook",
+    file: "docs/prompt-engineering-playbook.md",
+    order: 0,
+  },
 ];
