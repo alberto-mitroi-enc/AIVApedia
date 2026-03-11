@@ -16,7 +16,7 @@ function renderTopNavbar(activePage = "home") {
     <header
       class="absolute top-0 left-0 w-full z-50 px-6 sm:px-12 lg:px-80 py-8 flex justify-between items-center"
     >
-      <a href="AIVApedia.html" class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2">
         <svg
           width="32"
           height="32"
@@ -45,7 +45,7 @@ function renderTopNavbar(activePage = "home") {
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-lg font-semibold tracking-wide">
-        <a href="AIVApedia.html" class="${homeActiveClass}">Home</a>
+        <a href="index.html" class="${homeActiveClass}">Home</a>
         <a href="docs.html" class="${docsActiveClass}">Docs</a>
       </nav>
     </header>
